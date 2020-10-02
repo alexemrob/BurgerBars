@@ -1,5 +1,4 @@
-# Title
-Eat-Da-Burger!
+# Eat-Da-Burger!
 ## Description
 Eat-Da-Burger! is a restaurant app that lets users input the names of burgers they'd like to eat.
 ## Usage
@@ -9,4 +8,4 @@ Whenever a user submits a burger's name, your app will display the burger on the
 
 [Visit my repository!](https://www.github.com/alexemrob)
 
-For any further questions email me at AlexEmRob
+For any further questions email me at AlexEmRob@gmail.com
