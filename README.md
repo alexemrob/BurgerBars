@@ -9,8 +9,8 @@ This burger logger is created with MySQL, Node, Express, Handlebars and a homema
 <li>Each burger in the waiting area also has a Devour it! button. When the user clicks it, the burger will move to the right side of the page.</li>
 <li>Devoured or not, this app will store every burger in a database.</li>
 </ul>
+<br>
 ## Questions
-
 [Visit my repository!](https://www.github.com/alexemrob)
 
 For any further questions email me at AlexEmRob@gmail.com
