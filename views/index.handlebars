@@ -1,35 +1,46 @@
-<h1>Eat-Da-Burger!</h1>
+<div class="container">
+    <section id="page-name">
+        <h1>Eat-Da-Burger</h1>
+        <img src="assets/img/burger.jpg" alt="vegBurg" width="200" height="200">
+    </section>
 
-<img class="card-img-top" src="assets/images/burger.png" alt="burgerPic">
-<ul>
-  {{#each burgers}}
-    {{#unless devoured}}
-      {{> burgers/burger-block devoured=true}}
-    {{/unless}}
-  {{/each}}
-</ul>
-
-
-<ul>
-  {{#each burgers}}
-    {{#if devoured}}
-      {{> burgers/burger-block devoured=false}}
-    {{/if}}
-  {{/each}}
-</ul>
-
-<h2>Which burger is next?</h2>
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="ca">Burger Name:</label>
-    <input type="text" id="ca" name="name">
-  </div>
-
-  <div class="form-group">
-    <label for="slee">Hungry?</label><br>
-    <input type="radio" name="sleepy" value="1" makeBurger> Order It!!
-  </div>
-
-  <button type="submit">Make Burger!</button>
-</form>
+    <section class="row">
+        <div class="burgz">
+            <table>
+                {{#each burgers}}
+                {{#unless this.devoured}}
+                <form action="/burgers/update/{{this.id}}?_method=PUT" method="POST">
+                    <div class="form-group">
+                        <ul>
+                            <li>
+                                <button type="submit" name="devoured" value="1">{{burger_name}}</button>
+                            </li>
+                        </ul>
+                    </div>
+                </form>
+                {{/unless}}
+                {{/each}}
+            </table>
+        </div>
+        <div class="col-md-5 col-right">
+            {{#each burgers}}
+            {{#if this.devoured}}
+            <div>
+                <ul>
+                    <li>
+                        <button>{{burger_name}}</button>
+                    </li>
+                </ul>
+            </div>
+            {{/if}}
+            {{/each}}
+        </div>
+    </section>
+    <form action="/burgers/create" method="POST">
+        <div class="newBurgz">
+            <input type="text" name="burger_name" class="form-control text-center" maxlength="50"
+                placeholder="What kinda burger next?">
+            <button type="submit">Order Up!!</button>
+        </div>
+    </form>
+</div>
