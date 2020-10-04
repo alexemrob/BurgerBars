@@ -9,11 +9,11 @@
             <table>
                 {{#each burgers}}
                 {{#unless this.devoured}}
-                <form action="/burgers/update/{{this.id}}?_method=PUT" method="POST">
+                <form action="/burgers/update/{{this.id}}?_method=POST" method="POST">
                     <div class="form-group">
                         <ul>
                             <li>
-                                <button type="submit" name="devoured" value="1">{{burger_name}}</button>
+                                {{burger_name}} <button type="submit" name="devour" value="1">Devour!</button>
                             </li>
                         </ul>
                     </div>
@@ -25,13 +25,15 @@
         <div class="col-md-5 col-right">
             {{#each burgers}}
             {{#if this.devoured}}
-            <div>
-                <ul>
-                    <li>
-                        <button>{{burger_name}}</button>
-                    </li>
-                </ul>
-            </div>
+            <form action="/burgers/update/{{this.id}}?_method=POST" method="POST">
+                <div>
+                    <ul>
+                        <li>
+                            {{burger_name}}
+                        </li>
+                    </ul>
+                </div>
+            </form>
             {{/if}}
             {{/each}}
         </div>
