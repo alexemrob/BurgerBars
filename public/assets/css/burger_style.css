@@ -10,7 +10,6 @@ li {
     font-weight: bold;
   }
   
-  
   .form-group {
     margin-bottom: 5px;
   }
@@ -28,5 +27,5 @@ body{
     background-color: rgb(253, 194, 67);
 }
 .newBurgz{
-    margin-top: 75px;
+    margin-top: 50px;
 }
