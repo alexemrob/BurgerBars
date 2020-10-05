@@ -1,48 +1,50 @@
 <div class="container">
-    <section id="page-name">
+    <section class="d-flex justify-content-center align-items-center" id="page-name">
         <h1>Eat-Da-Burger</h1>
+    </section>
+    <section class="d-flex justify-content-center align-items-center">
         <img src="assets/img/burger.jpg" alt="vegBurg" width="200" height="200">
     </section>
 
     <section class="row">
-        <div class="burgz">
+        <div class="col-md-6 ">
             <table>
                 {{#each burgers}}
                 {{#unless this.devoured}}
-                <form action="/burgers/update/{{this.id}}?_method=POST" method="POST">
-                    <div class="form-group">
-                        <ul>
-                            <li>
-                                {{burger_name}} <button type="submit" name="devour" value="1">Devour!</button>
-                            </li>
-                        </ul>
-                    </div>
-                </form>
+                {{!-- <form action="/burgers/update/{{this.id}}" method="PUT"> --}}
+                <div class="form-group">
+                    <ul>
+                        <li>
+                            {{burger_name}} <button type="submit" data-id="{{this.id}}" class="change-devour"
+                                name="devoured" value="1">Devour!</button>
+                        </li>
+                    </ul>
+                </div>
+                {{!-- </form> --}}
                 {{/unless}}
                 {{/each}}
             </table>
         </div>
-        <div class="col-md-5 col-right">
+        <div class="col-md-6 col-right">
             {{#each burgers}}
             {{#if this.devoured}}
-            <form action="/burgers/update/{{this.id}}?_method=POST" method="POST">
-                <div>
-                    <ul>
-                        <li>
-                            {{burger_name}}
-                        </li>
-                    </ul>
-                </div>
+            {{!-- <form action="/burgers/update/{{this.id}}?_method=PUT" method="POST"> --}}
+            <div>
+                <ul>
+                    <li>
+                        {{burger_name}} has been devoured.
+                    </li>
+                </ul>
+            </div>
             </form>
             {{/if}}
             {{/each}}
         </div>
     </section>
-    <form action="/burgers/create" method="POST">
+    <form class="d-flex justify-content-center align-items-center" action="/burgers/create" method="POST">
         <div class="newBurgz">
             <input type="text" name="burger_name" class="form-control text-center" maxlength="50"
-                placeholder="What kinda burger next?">
-            <button type="submit">Order Up!!</button>
+                placeholder="What kinda burger next?"><button type="submit">Order Up!!</button>
         </div>
     </form>
 </div>

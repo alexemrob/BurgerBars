@@ -1,6 +1,4 @@
-:root{
-    background-color: rgb(253, 194, 67);
-}
+
 li {
     padding: 5px;
     margin: 5px;
@@ -17,9 +15,7 @@ li {
     margin-bottom: 5px;
   }
 
-#devoured {
-    float: left;
-}  
+
 h1{
     text-align: center;
     font-size: 75px;
@@ -27,12 +23,10 @@ h1{
     color: white;
 }
 
-img{
-    margin-left: 570px;
-}
-.burgz{
-    margin-left: 300px;
+
+body{
+    background-color: rgb(253, 194, 67);
 }
 .newBurgz{
-    margin-left: 530px;
+    margin-top: 75px;
 }
